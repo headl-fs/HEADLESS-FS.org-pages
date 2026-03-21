@@ -76,6 +76,99 @@ body {
     text-decoration: underline;
 }
 
+/* ── Projects Section ── */
+.projects-section {
+    margin-top: 2.5rem;
+    margin-bottom: 3rem;
+    max-width: 480px;
+}
+
+.projects-section h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.projects-hint {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 1rem;
+}
+
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.project-badge {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.85);
+    transition: all 0.2s ease;
+}
+
+.project-badge:hover,
+.project-badge:focus {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    outline: none;
+}
+
+.project-name {
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+}
+
+.project-tooltip {
+    position: absolute;
+    bottom: calc(100% + 0.5rem);
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    max-width: 280px;
+    padding: 0.75rem 1rem;
+    background: rgba(20, 20, 30, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.5rem;
+    font-family: Arial, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.project-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: rgba(20, 20, 30, 0.95);
+}
+
+.project-badge:hover .project-tooltip,
+.project-badge:focus .project-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
 /* ── Default: Desktop (>1024px) ── */
 .background-layer {
     background-image: url(../images/background.f5aafd5167bf1e54dedb.svg);
@@ -115,6 +208,24 @@ body {
 
     h2 {
         font-size: 1.3rem;
+    }
+
+    .projects-section {
+        margin-top: 2rem;
+    }
+
+    .projects-section h3 {
+        font-size: 1rem;
+    }
+
+    .project-badge {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .project-tooltip {
+        max-width: 240px;
+        font-size: 0.75rem;
     }
 }
 
@@ -160,6 +271,30 @@ body {
     .site-footer {
         padding: 0.6rem 1rem;
         font-size: 0.65rem;
+    }
+
+    .projects-section {
+        margin-top: 1.5rem;
+        margin-bottom: 4rem;
+    }
+
+    .projects-section h3 {
+        font-size: 0.9rem;
+    }
+
+    .projects-grid {
+        gap: 0.5rem;
+    }
+
+    .project-badge {
+        padding: 0.35rem 0.7rem;
+        font-size: 0.75rem;
+    }
+
+    .project-tooltip {
+        max-width: 200px;
+        font-size: 0.7rem;
+        padding: 0.6rem 0.8rem;
     }
 }
 
